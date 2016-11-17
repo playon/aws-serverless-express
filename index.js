@@ -60,6 +60,7 @@ function forwardResponseToApiGateway(server, response, context) {
         })
         const successResponse = {statusCode, body, headers}
 
+        console.log('forwardResponseToApiGateway:context.succeed');
         context.succeed(successResponse)
     })
 }
@@ -72,6 +73,7 @@ function forwardConnectionErrorResponseToApiGateway(server, error, context) {
         headers: {}
     }
 
+    console.log('forwardConnectionErrorResponseToApiGateway:context.succeed');
     context.succeed(errorResponse)
 }
 
@@ -83,6 +85,7 @@ function forwardLibraryErrorResponseToApiGateway(server, error, context) {
         headers: {}
     }
 
+    console.log('forwardLibraryErrorResponseToApiGateway:context.succeed');
     context.succeed(errorResponse)
 }
 
